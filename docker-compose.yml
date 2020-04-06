@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+  web:
+    build: .
+      # context: .
+      # args:
+      #   PIP_REQUIREMENTS: /home/hello_project/requirements/production.txt
+    command: python /home/hello_project/manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/home/hello_project
+    ports:
+      - "8000:8000"
